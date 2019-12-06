@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 @Controller
@@ -23,10 +25,13 @@ public class RedisController {
         Object value = redisUtil.get("1");
         System.out.println(value);
 
-        redisUtil.set("string","string");
+        redisUtil.set("string2","2222222222");
         ArrayList<Object> list = new ArrayList<>();
         list.add(1);
-        list.add(2);
+        list.add(3);
         redisUtil.lSet("list",list);
+        HashSet<String> strings = new HashSet<>();
+        boolean a = strings.add("a");
+        redisUtil.sSet("hashset",strings);
     }
 }

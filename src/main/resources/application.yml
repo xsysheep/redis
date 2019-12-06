@@ -19,6 +19,10 @@ spring:
           max-idle: 10
           max-wait: -1
           min-idle: 0
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
 server:
   tomcat:
     uri-encoding: UTF-8
@@ -27,3 +31,8 @@ server:
     max-threads: 300
     accept-count: 200
   port: 8090
+logging:
+  file: springbootdemo.log
+  level:
+    root : INFO
+    com.demo.redis.redis.bean : WARN
